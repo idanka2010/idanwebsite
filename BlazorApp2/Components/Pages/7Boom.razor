@@ -1,17 +1,34 @@
 ﻿@page "/7Boom"
-<h3>7Boom</h3>
-<ul>
-@for (int i = 0; i <= 100; i++)
-{
-        <span>
-            @if (i == 7 || i % 10 == 7 || i % 100 == 7 || i % 7 == 0 || i / 10 == 7)
+
+<head>
+    <link href="css/app.css" rel="stylesheet" />
+</head>
+
+
+<div class="seven-boom-container">
+    <h3>7Boom</h3>
+
+    <table class="seven-boom-table">
+        <tbody>
+            @for (int row = 0; row < 10; row++) 
             {
-                <span>
-                    Boom
-                </span>
+                <tr>
+                    @for (int col = 1; col <= 10; col++)
+                    {
+                        int number = row * 10 + col;
+                        <td>
+                            @if (number == 7 || number % 7 == 0 || number % 10 == 7 || number / 10 == 7)
+                            {
+                                <img src="boomicon-removebg-preview.png" class="boom-icon" />
+                            }
+                            else
+                            {
+                                @number
+                            }
+                        </td>
+                    }
+                </tr>
             }
-            else
-            @i
-        </span>
-}
-</ul>
+        </tbody>
+    </table>
+</div>
