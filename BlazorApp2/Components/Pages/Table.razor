@@ -1,0 +1,28 @@
+﻿@page "/Table"
+
+<h3>Table</h3>
+
+<table border="1" style="width: 100%; text-align: center; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th></th> <!-- Empty corner cell -->
+            @for (int col = 1; col <= 10; col++)
+            {
+                <th>@col</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @for (int row = 1; row <= 10; row++)
+        {
+            <tr>
+                <th>@row</th> <!-- Row header -->
+                @for (int col = 1; col <= 10; col++)
+                {
+                    <td>@(row * col)</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
